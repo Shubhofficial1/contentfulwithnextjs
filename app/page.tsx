@@ -2,14 +2,14 @@ import { client } from "@/config/contentful";
 import Image from "next/image";
 import Link from "next/link";
 
-async function fetchBlogs() {
+async function fetchBlogsData() {
   const response = await client.getEntries();
   const blogs = response.items;
   return blogs;
 }
 
 export default async function Home() {
-  const blogs = await fetchBlogs();
+  const blogs = await fetchBlogsData();
 
   return (
     <div>
